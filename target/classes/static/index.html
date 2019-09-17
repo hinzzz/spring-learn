@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<h1>登录页</h1>
+<form  action="login" method="get">
+    <input type="text" value="" name="username" />
+    <input type="text" value="" name="password"/>
+    <input type="submit" value="提交"/>
+</form>
+<div id="code" style="width: 300px;height: 300px;background-color: aqua"></div>
+  
+</body>
+<script type="text/javascript">
+
+var obj = new WxLogin({
+self_redirect:true,
+id:"code",
+appid: "",
+scope: "",
+redirect_uri: "asd",
+state: "",
+style: "",
+href: ""
+});
+</script>
+</html>
