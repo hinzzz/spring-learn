@@ -4,3 +4,5 @@
 ##### 2、@Transactional对异常的回滚情况
 ##### 3、@RequestBody一般用于处理非 Content-Type: application/x-www-form-urlencoded编码格式的数据，比如：application/json、application/xml等类型的数据。
 ##### 4、利用aop加自定义注解在controller层添加日志操作 测试地址http://localhost:9999/sso/log (a minute ago)
+
+##### 5、整合aop 自定义注解 springboot自动配置类 yml配置文件 阿里Druid数据源 实现多数据源的切换
