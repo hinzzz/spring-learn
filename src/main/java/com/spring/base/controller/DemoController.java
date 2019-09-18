@@ -5,6 +5,7 @@ import com.spring.base.model.UserInfo;
 import com.spring.base.service.UserInfoSeveice;
 import com.spring.base.log.LogTest;
 import com.spring.base.log.SystemLog;
+import com.spring.sys.DataSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -59,5 +60,23 @@ public class DemoController {
         return BaseResult.success("操作成功！", LogTest.getLogs());
     }
 
+
+
+    @SystemLog(menuCode = "sys.testMaster",methodDesc = "测试主库")
+    @DataSource("master")
+    @GetMapping("/master")
+    @ResponseBody
+    public BaseResult master(){
+        return BaseResult.success("操作成功！", LogTest.getLogs());
+    }
+
+
+    @SystemLog(menuCode = "sys.testMaster",methodDesc = "测试从库")
+    @DataSource("slave")
+    @GetMapping("/slave")
+    @ResponseBody
+    public BaseResult slave(){
+        return BaseResult.success("操作成功！", LogTest.getLogs());
+    }
 
 }
