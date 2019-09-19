@@ -1,4 +1,4 @@
-package com.spring.sys;
+package com.spring.sys.datasource;
 
 /**
  * @author ：quanhz

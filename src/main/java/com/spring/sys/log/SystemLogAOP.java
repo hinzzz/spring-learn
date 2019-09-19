@@ -1,4 +1,4 @@
-package com.spring.base.log;
+package com.spring.sys.log;
 
 import com.alibaba.fastjson.JSON;
 import com.spring.base.base.BaseResult;
@@ -25,7 +25,7 @@ import java.util.Random;
 @Component
 public class SystemLogAOP {
 
-    @Pointcut(value = "@annotation(com.spring.base.log.SystemLog)")
+    @Pointcut(value = "@annotation(com.spring.sys.log.SystemLog)")
     public void controllerLogAspect(){
 
     }

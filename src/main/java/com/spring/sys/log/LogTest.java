@@ -1,4 +1,4 @@
-package com.spring.base.log;
+package com.spring.sys.log;
 
 import java.util.HashMap;
 import java.util.Map;

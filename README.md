@@ -6,3 +6,4 @@
 ##### 4、利用aop加自定义注解在controller层添加日志操作 测试地址http://localhost:9999/sso/log (a minute ago)
 
 ##### 5、整合aop 自定义注解 springboot自动配置类 yml配置文件 阿里Druid数据源 实现多数据源的切换
+##### 6、修改yml配置文件 统一级的属性必须左对齐

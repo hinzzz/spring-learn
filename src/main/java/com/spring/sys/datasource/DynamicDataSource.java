@@ -1,4 +1,4 @@
-package com.spring.sys;
+package com.spring.sys.datasource;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 

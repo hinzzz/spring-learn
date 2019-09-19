@@ -1,4 +1,4 @@
-package com.spring.sys;
+package com.spring.sys.datasource;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -6,6 +6,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
@@ -14,9 +15,10 @@ import java.lang.reflect.Method;
  * @date ：Created in 2019/9/18 15:49
  */
 @Aspect
+@Component
 public class DataSourceAspect {
 
-    @Pointcut("@annotation(com.spring.sys.DataSource)")
+    @Pointcut("@annotation(com.spring.sys.datasource.DataSource)")
     public void determineDataSource(){
 
     }
