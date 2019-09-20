@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @ComponentScan("com.spring")
-@MapperScan("com.spring.base.dao")
 @SpringBootApplication
 public class BaseApplication {
 

@@ -1,0 +1,110 @@
+/*
+ * 项目名称:${cfg.PROJECT_NAME}
+* 类名称:${table.controllerName}.java
+ * 包名称:${package.Controller}
+*
+ * 修改履历:
+ *      日期           修正者      主要内容
+ *      ${date}    ${author}      初版完成
+ *
+ * Copyright (c) 2017-2019 咨同科技
+ */
+package ${package.Controller};
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import ${package.Entity}.${table.entityName};
+import ${package.Service}.${table.serviceName};
+        <#if restControllerStyle>
+import org.springframework.web.bind.annotation.RestController;
+        <#else>
+import org.springframework.stereotype.Controller;
+        </#if>
+        <#if superControllerClassPackage??>
+import ${superControllerClassPackage};
+        </#if>
+
+import java.util.List;
+
+/**
+ * <p>
+ * ${table.comment!} 前端控制器
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+        <#if restControllerStyle>
+@RestController
+        <#else>
+@Controller
+</#if>
+        @RequestMapping("<#if package.ModuleName??>/${package.ModuleName}</#if>/${table.name?keep_after("_")?replace("_", "/")}")
+        <#if kotlin>
+class ${table.controllerName}<#if superControllerClass??> : ${superControllerClass}()</#if>
+        <#else>
+        <#if superControllerClass??>
+public class ${table.controllerName} extends ${superControllerClass} {
+        <#else>
+public class ${table.controllerName} {
+</#if>
+</#if>
+
+@Autowired
+private ${table.serviceName} ${table.serviceName?uncap_first};
+
+/**
+ * 增加${table.comment}
+ *
+ * @param ${table.entityName?uncap_first}
+ * @return
+ */
+@RequestMapping("/save")
+@RequiresPermissions("${table.name?keep_after("_")?replace("_", ":")}:save")
+public R save(@RequestBody ${table.entityName} ${table.entityName?uncap_first}) {
+    ${table.serviceName?uncap_first}.save(${table.entityName?uncap_first});
+        return R.ok();
+        }
+
+/**
+ * 删除${table.comment}
+ *
+ * @param id
+ * @return
+ */
+@RequestMapping("delete")
+@RequiresPermissions("${table.name?keep_after("_")?replace("_", ":")}:delete")
+public R delete(String id) {
+    ${table.serviceName?uncap_first}.removeById(id);
+        return R.ok();
+        }
+
+/**
+ * 修改${table.comment}
+ *
+ * @param ${table.entityName?uncap_first}
+ * @return
+ */
+@RequestMapping("update")
+@RequiresPermissions("${table.name?keep_after("_")?replace("_", ":")}:update")
+public R update(@RequestBody ${table.entityName} ${table.entityName?uncap_first}) {
+    ${table.serviceName?uncap_first}.updateById(${table.entityName?uncap_first});
+        return R.ok();
+        }
+
+/**
+ * 查看${table.comment}
+ *
+ * @return
+ */
+@RequestMapping("list")
+@RequiresPermissions("${table.name?keep_after("_")?replace("_", ":")}:list")
+public R list() {
+        List<${table.entityName}> sysDictEntityList = ${table.serviceName?uncap_first}.list();
+        return R.ok(sysDictEntityList);
+        }
+
+        }
+

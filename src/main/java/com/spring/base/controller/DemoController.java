@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 /**
  * @author quanhz
@@ -20,12 +21,21 @@ public class DemoController {
     @Resource
     private UserInfoSeveice userInfoSeveice;
 
-    @Resource(name = "master")
-    private javax.sql.DataSource master;
 
-    @Resource(name = "slave")
-    private javax.sql.DataSource slave;
 
+
+    @RequestMapping("/setSession")
+    @ResponseBody
+    public String setSession(HttpSession session){
+        session.setAttribute("name","hinzzz");
+        return "hello";
+    }
+
+    @RequestMapping("/getSession")
+    @ResponseBody
+    public Object getSession(HttpSession session){
+        return session.getAttribute("name");
+    }
     /***
      * 注解@RequestBody接收的参数是来自requestBody中，即请求体。
      * 一般用于处理非 Content-Type: application/x-www-form-urlencoded编码格式的数据，

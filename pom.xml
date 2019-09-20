@@ -43,6 +43,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>spring-boot-starter-logging</artifactId>
+          <groupId>org.springframework.boot</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
@@ -70,6 +76,26 @@
       <artifactId>mybatis-plus-boot-starter</artifactId>
       <version>2.2.0</version>
     </dependency>
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+
+    <!-- mybatisplus 代码生成器 -->
+    <!-- 模板引擎 -->
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity-engine-core</artifactId>
+      <version>2.0</version>
+    </dependency>
+
+    <!-- 模板引擎，需要指定 mpg.setTemplateEngine(new FreemarkerTemplateEngine()); -->
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.23</version>
+    </dependency>
 
     <!--<dependency>
       <groupId>org.mybatis.spring.boot</groupId>
@@ -90,10 +116,14 @@
       <version>1.1.20</version>
     </dependency>
 
+    <!--整合slf4j和logback-->
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
     </dependency>
 
 

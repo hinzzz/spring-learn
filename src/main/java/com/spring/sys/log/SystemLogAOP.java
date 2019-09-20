@@ -8,6 +8,8 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -24,6 +26,8 @@ import java.util.Random;
 @Aspect
 @Component
 public class SystemLogAOP {
+
+    private final static Logger log = LoggerFactory.getLogger(SystemLogAOP.class);
 
     @Pointcut(value = "@annotation(com.spring.sys.log.SystemLog)")
     public void controllerLogAspect(){
@@ -68,7 +72,6 @@ public class SystemLogAOP {
         bLog.setReturnResult(JSON.toJSONString(baseResult));
         bLog.setRequestTime(new Date());
         bLog.setId(new Random().nextLong());
-        System.out.println("bLog = " + bLog);
         LogTest.put(bLog);
     }
 

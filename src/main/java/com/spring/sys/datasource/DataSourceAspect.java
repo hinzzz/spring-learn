@@ -6,6 +6,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
@@ -17,6 +19,8 @@ import java.lang.reflect.Method;
 @Aspect
 @Component
 public class DataSourceAspect {
+
+    private final static Logger log = LoggerFactory.getLogger(DataSourceAspect.class);
 
     @Pointcut("@annotation(com.spring.sys.datasource.DataSource)")
     public void determineDataSource(){
@@ -39,7 +43,7 @@ public class DataSourceAspect {
         try {
             Method method = aClass.getMethod(methodName, parameterTypes);
             DataSource dataSource = method.getAnnotation(DataSource.class);
-            System.out.println("当前数据库：" + dataSource.value());
+            log.info("当前数据库：" + dataSource.value());
             DynamicDataSourceHolder.put(dataSource.value());
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -48,7 +52,7 @@ public class DataSourceAspect {
 
     @After("determineDataSource()")
     public void clearDataSource(){
-        System.out.println("重置数据库...........");
+        log.info("重置数据库。。。。。。。。。");
         DynamicDataSourceHolder.clear();
     }
 
