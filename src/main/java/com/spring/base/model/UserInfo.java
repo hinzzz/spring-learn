@@ -1,6 +1,6 @@
 package com.spring.base.model;
 
-public class UserInfo{
+public class UserInfo {
     private String username;
     private String password;
 

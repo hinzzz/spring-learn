@@ -1,4 +1,4 @@
-package com.spring.sys.log;
+package com.spring.base.sys.log;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,7 +6,6 @@ import java.util.Date;
 /**
  * @author ：quanhz
  * @date ：Created in 2019/9/18 9:24
- *
  */
 public class BaseOperLog implements Serializable {
     private Long id;
@@ -40,7 +39,6 @@ public class BaseOperLog implements Serializable {
     private String methodDesc;
     //请求状态 0 失败 1 成功
     private Integer requestStatus;
-
 
 
     public Long getId() {

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class MyRequestUtil {
 
-    public static String getRemoteAddr(HttpServletRequest request){
+    public static String getRemoteAddr(HttpServletRequest request) {
         try {
             String xforwardedFor = request.getHeader("x-forwarded-for");
             String xRealIp = request.getHeader("X-Real-IP");
@@ -22,7 +22,7 @@ public class MyRequestUtil {
                 return xRealIp;
             }
             return request.getRemoteAddr();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
@@ -31,11 +31,11 @@ public class MyRequestUtil {
     public static String getRequestParams(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
         StringBuilder sb = new StringBuilder();
-        if(args!=null && args.length>0){
+        if (args != null && args.length > 0) {
             for (Object arg : args) {
                 sb.append(arg).append(",");
             }
-            sb.setLength(sb.length()-1);
+            sb.setLength(sb.length() - 1);
         }
         return sb.toString();
     }

@@ -1,4 +1,4 @@
-package com.spring.sys.datasource;
+package com.spring.base.sys.datasource;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -22,14 +22,14 @@ public class DataSourceAspect {
 
     private final static Logger log = LoggerFactory.getLogger(DataSourceAspect.class);
 
-    @Pointcut("@annotation(com.spring.sys.datasource.DataSource)")
-    public void determineDataSource(){
+    @Pointcut("@annotation(com.spring.base.sys.datasource.DataSource)")
+    public void determineDataSource() {
 
     }
 
 
     @Before("determineDataSource()")
-    public void getDataSource(JoinPoint joinPoint){
+    public void getDataSource(JoinPoint joinPoint) {
         /*
          * 1、获取类名
          * 2、获取切到方法名
@@ -38,8 +38,9 @@ public class DataSourceAspect {
         Class<?> aClass = joinPoint.getTarget().getClass();
 
 
-        Class<?>[] parameterTypes = ((MethodSignature)joinPoint.getSignature()).getParameterTypes();
+        Class<?>[] parameterTypes = ((MethodSignature) joinPoint.getSignature()).getParameterTypes();
         String methodName = joinPoint.getSignature().getName();
+        System.out.println("methodName = " + methodName);
         try {
             Method method = aClass.getMethod(methodName, parameterTypes);
             DataSource dataSource = method.getAnnotation(DataSource.class);
@@ -51,7 +52,7 @@ public class DataSourceAspect {
     }
 
     @After("determineDataSource()")
-    public void clearDataSource(){
+    public void clearDataSource() {
         log.info("重置数据库。。。。。。。。。");
         DynamicDataSourceHolder.clear();
     }

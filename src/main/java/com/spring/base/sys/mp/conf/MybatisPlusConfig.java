@@ -1,23 +1,17 @@
-package com.spring.sys.mp.conf;
- 
-import javax.sql.DataSource;
- 
+package com.spring.base.sys.mp.conf;
+
 import org.mybatis.spring.annotation.MapperScan;
-import org.mybatis.spring.mapper.MapperScannerConfigurer;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
- 
-import com.alibaba.druid.pool.DruidDataSource;
+
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.plugins.PerformanceInterceptor;
- 
+
 @Configuration
 //扫描dao或者是Mapper接口
 @MapperScan("com.spring.base.dao")
 public class MybatisPlusConfig {
-	 /***
+    /***
      * plus 的性能优化
      * @return
      */
@@ -30,7 +24,7 @@ public class MybatisPlusConfig {
         performanceInterceptor.setFormat(true);
         return performanceInterceptor;
     }
- 
+
     /**
      * @Description : mybatis-plus分页插件
      */
@@ -38,9 +32,6 @@ public class MybatisPlusConfig {
     public PaginationInterceptor paginationInterceptor() {
         return new PaginationInterceptor();
     }
- 
-
- 
 
 
 }

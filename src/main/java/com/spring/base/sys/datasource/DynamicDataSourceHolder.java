@@ -1,4 +1,4 @@
-package com.spring.sys.datasource;
+package com.spring.base.sys.datasource;
 
 /**
  * @author ：quanhz
@@ -6,13 +6,16 @@ package com.spring.sys.datasource;
  */
 public class DynamicDataSourceHolder {
     private final static ThreadLocal<String> holder = new ThreadLocal<>();
-    public static void put(String dataSource){
+
+    public static void put(String dataSource) {
         holder.set(dataSource);
     }
-    public static String get(){
+
+    public static String get() {
         return holder.get();
     }
-    public static void clear(){
+
+    public static void clear() {
         holder.remove();
     }
 }

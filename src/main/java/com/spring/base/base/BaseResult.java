@@ -5,22 +5,22 @@ public class BaseResult {
     private String message;
     private Object data;
 
-    private BaseResult(boolean status, String message,Object data) {
+    private BaseResult(boolean status, String message, Object data) {
         this.status = status;
         this.message = message;
         this.data = data;
     }
 
-    public static BaseResult error(String message){
-        return new BaseResult(false,message,null);
+    public static BaseResult error(String message) {
+        return new BaseResult(false, message, null);
     }
 
-    public static BaseResult success(String message){
-        return new BaseResult(true,message,null);
+    public static BaseResult success(String message) {
+        return new BaseResult(true, message, null);
     }
 
-    public static BaseResult success(String message,Object data){
-        return new BaseResult(true,message,data);
+    public static BaseResult success(String message, Object data) {
+        return new BaseResult(true, message, data);
     }
 
     public boolean getStatus() {

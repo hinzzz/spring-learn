@@ -13,13 +13,11 @@ import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 /**
- * 
  * @author 生产者
- *
  */
 public class Producer {
 
-     //默认连接用户名
+    //默认连接用户名
     private static final String USERNAME = ActiveMQConnection.DEFAULT_USER;
     //默认连接密码
     private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
@@ -36,7 +34,7 @@ public class Producer {
             //启动连接
             connection.start();
             //创建session
-                Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
+            Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
             //消息目的地
             Destination destination = session.createQueue("FirstQueue");
             //消息生产者
@@ -57,6 +55,6 @@ public class Producer {
             connection.close();
         } catch (JMSException e) {
             e.printStackTrace();
-        } 
+        }
     }
 }

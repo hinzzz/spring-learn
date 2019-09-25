@@ -41,9 +41,9 @@ import java.util.List;
         <#else>
 @Controller
 </#if>
-        @RequestMapping("<#if package.ModuleName??>/${package.ModuleName}</#if>/${table.name?keep_after("_")?replace("_", "/")}")
+        @RequestMapping("<#if package.ModuleName??>/${package.ModuleName}</#if>/${table.name?keep_after("_")?replace(" _", " / ")}")
         <#if kotlin>
-class ${table.controllerName}<#if superControllerClass??> : ${superControllerClass}()</#if>
+class ${table.controllerName}<#if superControllerClass??>: ${superControllerClass}()</#if>
         <#else>
         <#if superControllerClass??>
 public class ${table.controllerName} extends ${superControllerClass} {
@@ -62,8 +62,8 @@ private ${table.serviceName} ${table.serviceName?uncap_first};
  * @return
  */
 @RequestMapping("/save")
-@RequiresPermissions("${table.name?keep_after("_")?replace("_", ":")}:save")
-public R save(@RequestBody ${table.entityName} ${table.entityName?uncap_first}) {
+@RequiresPermissions("${table.name?keep_after(" _")?replace(" _", ":")}:save")
+public R save(@RequestBody ${table.entityName} ${table.entityName?uncap_first}){
     ${table.serviceName?uncap_first}.save(${table.entityName?uncap_first});
         return R.ok();
         }
@@ -75,8 +75,8 @@ public R save(@RequestBody ${table.entityName} ${table.entityName?uncap_first}) 
  * @return
  */
 @RequestMapping("delete")
-@RequiresPermissions("${table.name?keep_after("_")?replace("_", ":")}:delete")
-public R delete(String id) {
+@RequiresPermissions("${table.name?keep_after(" _")?replace(" _", ":")}:delete")
+public R delete(String id){
     ${table.serviceName?uncap_first}.removeById(id);
         return R.ok();
         }
@@ -88,8 +88,8 @@ public R delete(String id) {
  * @return
  */
 @RequestMapping("update")
-@RequiresPermissions("${table.name?keep_after("_")?replace("_", ":")}:update")
-public R update(@RequestBody ${table.entityName} ${table.entityName?uncap_first}) {
+@RequiresPermissions("${table.name?keep_after(" _")?replace(" _", ":")}:update")
+public R update(@RequestBody ${table.entityName} ${table.entityName?uncap_first}){
     ${table.serviceName?uncap_first}.updateById(${table.entityName?uncap_first});
         return R.ok();
         }
@@ -100,9 +100,9 @@ public R update(@RequestBody ${table.entityName} ${table.entityName?uncap_first}
  * @return
  */
 @RequestMapping("list")
-@RequiresPermissions("${table.name?keep_after("_")?replace("_", ":")}:list")
-public R list() {
-        List<${table.entityName}> sysDictEntityList = ${table.serviceName?uncap_first}.list();
+@RequiresPermissions("${table.name?keep_after(" _")?replace(" _", ":")}:list")
+public R list(){
+        List<${table.entityName}> sysDictEntityList= ${table.serviceName?uncap_first}.list();
         return R.ok(sysDictEntityList);
         }
 

@@ -38,7 +38,7 @@ public class ReflectionUtils {
         return s1 + "," + s2;
     }
 
-	//反射获取属性名
+    //反射获取属性名
     public static String getField(Field[] declaredFields) {
         StringBuffer sf = new StringBuffer();
         for (int i = 0; i < declaredFields.length; ++i) {
@@ -50,7 +50,7 @@ public class ReflectionUtils {
         return sf.toString();
     }
 
-	//反射获取属性值
+    //反射获取属性值
     public static String getFieldValue(Object obj, Field[] declaredFields) {
         StringBuffer sf = new StringBuffer();
         for (int i = 0; i < declaredFields.length; ++i) {
@@ -64,7 +64,7 @@ public class ReflectionUtils {
 
                 //标识类型是否为String类型
                 boolean flag = false;
-                if (value != null && (value instanceof String||value instanceof Timestamp)) {
+                if (value != null && (value instanceof String || value instanceof Timestamp)) {
                     flag = true;
                 }
                 if (flag) {

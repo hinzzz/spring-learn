@@ -1,4 +1,4 @@
-package com.spring.sys.datasource;
+package com.spring.base.sys.datasource;
 
 import org.springframework.stereotype.Repository;
 

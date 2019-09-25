@@ -1,7 +1,7 @@
-package com.spring.sys.datasource;
+package com.spring.base.sys.datasource;
 
 public enum DBTypeEnum {
-    master("master"), slave("slave");
+    MASTER("master"), SLAVE("slave");
     private String value;
 
     DBTypeEnum(String value) {

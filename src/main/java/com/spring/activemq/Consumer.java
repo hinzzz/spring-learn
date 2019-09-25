@@ -12,9 +12,7 @@ import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 /**
- * 
  * @author 消费者
- *
  */
 public class Consumer {
 

@@ -16,12 +16,8 @@ import java.util.Map;
 public class LoginController {
 
 
-
-
-
-
-    @RequestMapping(value = "/login",method = RequestMethod.GET )
-    public String login(@RequestBody List<Map<String, String>> list)throws Exception{
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(@RequestBody List<Map<String, String>> list) throws Exception {
         //登陆成功
         /*if(userInfo.getUsername().equals("1") && userInfo.getPassword().equals("1")){
             String token = UUID.randomUUID().toString();
@@ -34,14 +30,14 @@ public class LoginController {
     }
 
     @RequestMapping("toLogin")
-    public String toLogin(){
+    public String toLogin() {
         return "index";
     }
 
 
     @ResponseBody
     @RequestMapping("hello")
-    public String hello(){
+    public String hello() {
         return "aaa";
     }
 }
