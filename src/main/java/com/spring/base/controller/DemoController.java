@@ -3,6 +3,8 @@ package com.spring.base.controller;
 import com.spring.base.base.BaseResult;
 import com.spring.base.model.UserInfo;
 import com.spring.base.service.UserInfoSeveice;
+import com.spring.base.sys.datasource.DBType;
+import com.spring.base.sys.datasource.DBTypeEnum;
 import com.spring.base.sys.log.LogTest;
 import com.spring.base.sys.log.SystemLog;
 import com.spring.base.sys.datasource.DataSource;
@@ -51,10 +53,19 @@ public class DemoController {
     }
 
 
-    @DataSource("master")
-    @RequestMapping("/update/{id}")
+    @DataSource(DBType.SLAVE)
+    @RequestMapping("/updateMaster/{id}")
     @ResponseBody
     public BaseResult updateUserInfo(@PathVariable("id") Long id) {
+        userInfoSeveice.updateUserInfo(id);
+        return BaseResult.success("修改成功");
+    }
+
+
+    @DataSource(DBType.SLAVE)
+    @RequestMapping("/updateSlave/{id}")
+    @ResponseBody
+    public BaseResult updateSlave(@PathVariable("id") Long id) {
         userInfoSeveice.updateUserInfo(id);
         return BaseResult.success("修改成功");
     }

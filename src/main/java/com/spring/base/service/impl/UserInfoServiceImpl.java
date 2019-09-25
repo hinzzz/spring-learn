@@ -34,14 +34,14 @@ public class UserInfoServiceImpl implements UserInfoSeveice {
         return userInfoMapper.getUserInfoById(Long.valueOf(id));
     }
 
-    @Transactional(rollbackFor = NullPointerException.class, value = "masterTransactionManager")
+    @Transactional(rollbackFor = TransactionException.class, value = "masterTransactionManager")
     @Override
     public int updateUserInfo(Long id) {
         System.out.println("userInfoMapper = " + userInfoMapper);
         userInfoMapper.updateUserInfo(id, "gg");
         userInfoMapper.updateUserInfo(3L, "mm");
         if (id == 1) {
-            throw new NullPointerException("事务异常");
+            throw new TransactionException("事务异常");
         }
         return 1;
     }

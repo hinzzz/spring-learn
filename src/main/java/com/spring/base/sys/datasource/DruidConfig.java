@@ -57,12 +57,12 @@ public class DruidConfig {
     /******配置事务管理********/
     @Bean(name = "masterTransactionManager")
     public DataSourceTransactionManager masterTransactionManager() {
-        return new DataSourceTransactionManager(druidMaster());
+        return new DataSourceTransactionManager(dynamicDataSource() );
     }
 
     @Bean(name = "slaveTransactionManager")
     public DataSourceTransactionManager slaveTransactionManager() {
-        return new DataSourceTransactionManager(druidSlave());
+        return new DataSourceTransactionManager(dynamicDataSource() );
     }
 
 
