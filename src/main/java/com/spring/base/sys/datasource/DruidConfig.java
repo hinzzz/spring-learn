@@ -5,11 +5,14 @@ import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
@@ -18,6 +21,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+@MapperScan("com.spring.base.dao.base.xml")
 @Configuration
 public class DruidConfig {
 
@@ -34,20 +38,27 @@ public class DruidConfig {
         return new DruidDataSource();
     }
 
-
+    @ConfigurationProperties(prefix = "spring.datasource.other")
+    @Bean("otherDataSource")
+    public DataSource otherDataSource(){
+        return new DruidDataSource();
+    }
     @Bean
     public DynamicDataSource dynamicDataSource() {
+        System.out.println("\"aaa\" = " + "aaa");
         Map<Object, Object> targetDataSource = new HashMap<>();
         targetDataSource.put(DBTypeEnum.MASTER.getValue(), druidMaster());
         targetDataSource.put(DBTypeEnum.SLAVE.getValue(), druidSlave());
+        targetDataSource.put(DBTypeEnum.OTHER.getValue(), otherDataSource());
         DynamicDataSource dataSource = new DynamicDataSource();
         dataSource.setTargetDataSources(targetDataSource);
         dataSource.setDefaultTargetDataSource(druidMaster());
         return dataSource;
     }
 
-    @Bean(name = "SqlSessionFactory")
-    public SqlSessionFactory test1SqlSessionFactory()
+
+    @Bean(name = "sqlSessionFactory")
+    public SqlSessionFactory sqlSessionFactory()
             throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dynamicDataSource());
@@ -56,12 +67,17 @@ public class DruidConfig {
 
     /******配置事务管理********/
     @Bean(name = "masterTransactionManager")
-    public DataSourceTransactionManager masterTransactionManager() {
-        return new DataSourceTransactionManager(dynamicDataSource() );
+    public DataSourceTransactionManager masterTransactionManager(){
+        return new DataSourceTransactionManager(dynamicDataSource());
     }
 
     @Bean(name = "slaveTransactionManager")
-    public DataSourceTransactionManager slaveTransactionManager() {
+    public DataSourceTransactionManager slaveTransactionManager(){
+        return new DataSourceTransactionManager(dynamicDataSource());
+    }
+
+    @Bean(name = "otherTransactionManager")
+    public DataSourceTransactionManager otherTransactionManager(){
         return new DataSourceTransactionManager(dynamicDataSource() );
     }
 

@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
@@ -16,12 +17,14 @@ import java.lang.reflect.Method;
  * @author ：quanhz
  * @date ：Created in 2019/9/18 15:49
  */
+//@Order(-10)
 @Aspect
 @Component
 public class DataSourceAspect {
 
     private final static Logger log = LoggerFactory.getLogger(DataSourceAspect.class);
 
+    //@Pointcut("execution(* com.spring.base.controller.*.*(..))")
     @Pointcut("@annotation(com.spring.base.sys.datasource.DataSource)")
     public void determineDataSource() {
 
@@ -40,12 +43,14 @@ public class DataSourceAspect {
 
         Class<?>[] parameterTypes = ((MethodSignature) joinPoint.getSignature()).getParameterTypes();
         String methodName = joinPoint.getSignature().getName();
-        System.out.println("methodName = " + methodName);
+        log.info("methodName = " + methodName);
         try {
             Method method = aClass.getMethod(methodName, parameterTypes);
             DataSource dataSource = method.getAnnotation(DataSource.class);
-            log.info("当前数据库：" + dataSource.value());
-            DynamicDataSourceHolder.put(dataSource.value());
+            if(dataSource==null)return;
+            String currDataSource = dataSource.value();
+            log.info("当前数据库：" + currDataSource);
+            DynamicDataSourceHolder.put(currDataSource);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
