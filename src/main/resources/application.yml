@@ -47,6 +47,14 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
   aop:
     proxy-target-class: true
+  application:
+    name: rabbitmq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: 123456
+
 
 
 #logback输出日志配置
@@ -55,6 +63,9 @@ logging:
 #  控制屏蔽对应包的日志打印
 #  level:
 #   com.springboot.sixmonth.controller: 'off'
+
+
+
 
 
 
