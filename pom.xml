@@ -8,6 +8,7 @@
     <version>2.1.8.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
+  <packaging>war</packaging>
   <groupId>com.spring</groupId>
   <artifactId>base</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -46,6 +47,10 @@
       <exclusions>
         <exclusion>
           <artifactId>spring-boot-starter-logging</artifactId>
+          <groupId>org.springframework.boot</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
           <groupId>org.springframework.boot</groupId>
         </exclusion>
       </exclusions>
@@ -131,6 +136,13 @@
     </dependency>
 
 
+    <!--使用外部tomcat-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>

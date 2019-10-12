@@ -56,5 +56,5 @@ logging:
 #  level:
 #   com.springboot.sixmonth.controller: 'off'
 
-
-
+server:
+  port: 80

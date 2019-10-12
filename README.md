@@ -11,3 +11,8 @@
 
 ##### 7、整合slf4j+logback日志框架 测试session 关闭浏览器是否失效 失效      	2019-09-20
 
+#####8、org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultValidator' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Factory method 'defaultValidator' threw exception; nested exception is java.lang.NoClassDefFoundError: javax/el/ELManager
+tomcat 版本升级到8解决
+
+#####9、tomcat升级到9控制台出现中文乱码D:\hinzzz\apache-tomcat-9.0.26\conf\logging.properties 
+注释掉这行即可java.util.logging.ConsoleHandler.encoding = UTF-8

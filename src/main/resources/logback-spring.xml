@@ -9,8 +9,9 @@
     debug="false" scan="true" scanPeriod="10 second">
 
   <!-- 配置日志输出目录文件夹以及进行重命名 -->
+  <property name="LOG_HOME" value="/opt/logs/web/" />
   <property name="PROJECT" value="spring-learn"/>
-  <property name="ROOT" value="logs/${PROJECT}/"/>
+  <property name="ROOT" value="${LOG_HOME}/${PROJECT}/"/>
   <!-- 配置日志文件大小 -->
   <property name="FILESIZE" value="50MB"/>
   <!-- 设置日志保留的时间，单位为天 -->
