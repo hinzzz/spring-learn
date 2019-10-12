@@ -1,0 +1,71 @@
+[INFO ] 2019-10-12 09:14:25.342 [restartedMain] com.spring.base.BaseApplication - Starting BaseApplication on DESKTOP-O1RTTVC with PID 12836 (D:\space\my\target\classes started by quanhz in D:\space\my)
+[INFO ] 2019-10-12 09:14:25.346 [restartedMain] com.spring.base.BaseApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2019-10-12 09:14:25.413 [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2019-10-12 09:14:25.413 [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2019-10-12 09:14:26.847 [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+[INFO ] 2019-10-12 09:14:26.998 [restartedMain] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1585 ms
+[INFO ] 2019-10-12 09:14:27.596 [restartedMain] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:14:27.670 [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2019-10-12 09:14:27.843 [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2019-10-12 09:14:27.895 [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/sso'
+[INFO ] 2019-10-12 09:14:27.898 [restartedMain] com.spring.base.BaseApplication - Started BaseApplication in 3.117 seconds (JVM running for 4.312)
+[INFO ] 2019-10-12 09:14:54.825 [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2019-10-12 09:14:54.834 [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+[INFO ] 2019-10-12 09:23:14.658 [Thread-6] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:14.659 [Thread-6] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 09:23:14.660 [Thread-6] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 09:23:14.944 [restartedMain] com.spring.base.BaseApplication - Starting BaseApplication on DESKTOP-O1RTTVC with PID 12836 (D:\space\my\target\classes started by quanhz in D:\space\my)
+[INFO ] 2019-10-12 09:23:14.944 [restartedMain] com.spring.base.BaseApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2019-10-12 09:23:15.472 [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+[INFO ] 2019-10-12 09:23:15.518 [restartedMain] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 571 ms
+[INFO ] 2019-10-12 09:23:15.770 [restartedMain] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:15.800 [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2019-10-12 09:23:15.908 [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2019-10-12 09:23:15.930 [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/sso'
+[INFO ] 2019-10-12 09:23:15.931 [restartedMain] com.spring.base.BaseApplication - Started BaseApplication in 1.043 seconds (JVM running for 532.345)
+[INFO ] 2019-10-12 09:23:15.933 [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 2019-10-12 09:23:17.804 [Thread-10] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:17.807 [Thread-10] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 09:23:17.808 [Thread-10] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 09:23:18.082 [restartedMain] com.spring.base.BaseApplication - Starting BaseApplication on DESKTOP-O1RTTVC with PID 12836 (D:\space\my\target\classes started by quanhz in D:\space\my)
+[INFO ] 2019-10-12 09:23:18.082 [restartedMain] com.spring.base.BaseApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2019-10-12 09:23:18.722 [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+[INFO ] 2019-10-12 09:23:18.764 [restartedMain] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 678 ms
+[INFO ] 2019-10-12 09:23:19.067 [restartedMain] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:19.097 [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2019-10-12 09:23:19.215 [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2019-10-12 09:23:19.236 [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/sso'
+[INFO ] 2019-10-12 09:23:19.237 [restartedMain] com.spring.base.BaseApplication - Started BaseApplication in 1.219 seconds (JVM running for 535.651)
+[INFO ] 2019-10-12 09:23:19.238 [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 2019-10-12 09:23:22.125 [main] com.spring.base.BaseApplicationTests - Starting BaseApplicationTests on DESKTOP-O1RTTVC with PID 1860 (started by quanhz in D:\space\my)
+[INFO ] 2019-10-12 09:23:22.126 [main] com.spring.base.BaseApplicationTests - No active profile set, falling back to default profiles: default
+[INFO ] 2019-10-12 09:23:24.401 [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:24.510 [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2019-10-12 09:23:24.812 [main] com.spring.base.BaseApplicationTests - Started BaseApplicationTests in 3.174 seconds (JVM running for 4.064)
+[INFO ] 2019-10-12 09:23:25.803 [Thread-3] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:25.804 [Thread-3] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 09:23:25.805 [Thread-3] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 09:23:50.457 [Thread-16] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:50.457 [Thread-16] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 09:23:50.457 [Thread-16] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 09:23:50.702 [restartedMain] com.spring.base.BaseApplication - Starting BaseApplication on DESKTOP-O1RTTVC with PID 12836 (D:\space\my\target\classes started by quanhz in D:\space\my)
+[INFO ] 2019-10-12 09:23:50.703 [restartedMain] com.spring.base.BaseApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2019-10-12 09:23:51.237 [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+[INFO ] 2019-10-12 09:23:51.275 [restartedMain] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 569 ms
+[INFO ] 2019-10-12 09:23:51.537 [restartedMain] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:51.566 [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2019-10-12 09:23:51.682 [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2019-10-12 09:23:51.701 [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/sso'
+[INFO ] 2019-10-12 09:23:51.702 [restartedMain] com.spring.base.BaseApplication - Started BaseApplication in 1.055 seconds (JVM running for 568.116)
+[INFO ] 2019-10-12 09:23:51.703 [main] com.spring.base.BaseApplicationTests - Starting BaseApplicationTests on DESKTOP-O1RTTVC with PID 1860 (started by quanhz in D:\space\my)
+[INFO ] 2019-10-12 09:23:51.704 [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 2019-10-12 09:23:51.704 [main] com.spring.base.BaseApplicationTests - No active profile set, falling back to default profiles: default
+[INFO ] 2019-10-12 09:23:53.669 [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:53.769 [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2019-10-12 09:23:54.016 [main] com.spring.base.BaseApplicationTests - Started BaseApplicationTests in 2.761 seconds (JVM running for 3.599)
+[INFO ] 2019-10-12 09:23:54.207 [Thread-3] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 09:23:54.208 [Thread-3] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 09:23:54.208 [Thread-3] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 11:47:26.833 [Thread-27] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-10-12 11:47:26.839 [Thread-27] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+[INFO ] 2019-10-12 11:47:26.839 [Thread-27] c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
