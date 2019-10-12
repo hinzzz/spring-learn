@@ -45,7 +45,6 @@ public class DruidConfig {
     }
     @Bean
     public DynamicDataSource dynamicDataSource() {
-        System.out.println("\"aaa\" = " + "aaa");
         Map<Object, Object> targetDataSource = new HashMap<>();
         targetDataSource.put(DBTypeEnum.MASTER.getValue(), druidMaster());
         targetDataSource.put(DBTypeEnum.SLAVE.getValue(), druidSlave());

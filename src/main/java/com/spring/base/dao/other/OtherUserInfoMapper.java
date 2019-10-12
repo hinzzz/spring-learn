@@ -2,7 +2,6 @@ package com.spring.base.dao.other;
 
 
 import com.spring.base.model.UserInfo;
-import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface OtherUserInfoMapper {

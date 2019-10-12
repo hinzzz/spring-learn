@@ -11,8 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import sun.misc.ProxyGenerator;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.FileOutputStream;
 
 /**
  * @author ：quanhz
@@ -44,13 +47,19 @@ public class OtherController {
     //@DataSource(DBType.OTHER)
     @RequestMapping("/updateUser/{id}/{username}/{t}")
     @ResponseBody
-    public BaseResult updateUser(@PathVariable("id") Long id,@PathVariable("username")String username,@PathVariable("t")Integer t){
-        userInfoSeveice.update1(id);
-        userInfoSeveice.update2(id);
-        /*update1(1L);
-        update2(1L);*/
+    public BaseResult updateUser(@PathVariable("id") Long id,@PathVariable("username")String username,@PathVariable("t")Integer t)throws Exception{
+        /*userInfoSeveice.update1(id);
+        userInfoSeveice.update2(id);*/
+        update1(1L);
+        update2(1L);
+        byte[] bts = ProxyGenerator.generateProxyClass("$Controller", this.getClass().getInterfaces());
+        FileOutputStream fos = new FileOutputStream(new File("D:\\$Controller.class"));
+        fos.write(bts);
+        fos.flush();
+        fos.close();
         UserInfo info = get(id);
         int a = 10/t;
+
         return BaseResult.success("更新用户成功",info);
     }
 
