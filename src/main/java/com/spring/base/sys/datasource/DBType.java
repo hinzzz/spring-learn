@@ -7,4 +7,5 @@ package com.spring.base.sys.datasource;
 public interface DBType {
     String MASTER = "master";
     String SLAVE = "slave";
+    String OTHER = "otherDataSource";
 }

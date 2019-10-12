@@ -9,7 +9,6 @@ import com.baomidou.mybatisplus.plugins.PerformanceInterceptor;
 
 @Configuration
 //扫描dao或者是Mapper接口
-@MapperScan("com.spring.base.dao")
 public class MybatisPlusConfig {
     /***
      * plus 的性能优化

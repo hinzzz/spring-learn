@@ -4,7 +4,6 @@ import com.spring.base.base.BaseResult;
 import com.spring.base.model.UserInfo;
 import com.spring.base.service.UserInfoSeveice;
 import com.spring.base.sys.datasource.DBType;
-import com.spring.base.sys.datasource.DBTypeEnum;
 import com.spring.base.sys.log.LogTest;
 import com.spring.base.sys.log.SystemLog;
 import com.spring.base.sys.datasource.DataSource;
@@ -53,7 +52,7 @@ public class DemoController {
     }
 
 
-    @DataSource(DBType.SLAVE)
+    @DataSource(DBType.MASTER)
     @RequestMapping("/updateMaster/{id}")
     @ResponseBody
     public BaseResult updateUserInfo(@PathVariable("id") Long id) {

@@ -1,4 +1,4 @@
-package com.spring.base.dao;
+package com.spring.base.dao.base.xml;
 
 
 import com.spring.base.model.UserInfo;

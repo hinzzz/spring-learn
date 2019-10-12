@@ -9,4 +9,7 @@ public interface UserInfoSeveice {
     int updateUserInfo(Long id);
 
 
+    void update1(Long id);
+
+    void update2(Long id);
 }

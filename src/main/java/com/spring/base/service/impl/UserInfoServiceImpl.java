@@ -1,12 +1,15 @@
 package com.spring.base.service.impl;
 
 
-import com.spring.base.dao.UserInfoMapper;
+import com.spring.base.dao.base.xml.UserInfoMapper;
+import com.spring.base.dao.other.OtherUserInfoMapper;
 import com.spring.base.exception.TransactionException;
 import com.spring.base.exception.UnKnowException;
 import com.spring.base.exception.UserInfoException;
 import com.spring.base.model.UserInfo;
 import com.spring.base.service.UserInfoSeveice;
+import com.spring.base.sys.datasource.DBType;
+import com.spring.base.sys.datasource.DataSource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +24,8 @@ public class UserInfoServiceImpl implements UserInfoSeveice {
 
     @Resource
     private UserInfoMapper userInfoMapper;
+    @Resource
+    private OtherUserInfoMapper otherUserInfoMapper;
 
     @Override
     public UserInfo getUserInfoById(String id) {
@@ -46,5 +51,25 @@ public class UserInfoServiceImpl implements UserInfoSeveice {
         return 1;
     }
 
+
+    @DataSource(DBType.OTHER)
+    @Transactional(transactionManager = "otherTransactionManager")
+    @Override
+    public void update1(Long id) {
+        otherUserInfoMapper.updateUserInfo(id,"other");
+    }
+    @Transactional(transactionManager = "masterTransactionManager")
+    @DataSource(DBType.MASTER)
+    @Override
+    public void update2(Long id) {
+        otherUserInfoMapper.updateUserInfo(id,"master");
+    }
+
+
+    @DataSource(DBType.OTHER)
+    @Transactional(transactionManager = "otherTransactionManager")
+    public UserInfo get(Long id){
+        return otherUserInfoMapper.getUserInfoById(id);
+    }
 
 }
