@@ -4,6 +4,7 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/*
 @Configuration
 public class RabbitConfig {
 
@@ -12,4 +13,4 @@ public class RabbitConfig {
         return new Queue("hello");
     }
 
-}
+}*/
