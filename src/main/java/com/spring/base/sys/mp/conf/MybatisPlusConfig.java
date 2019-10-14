@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.plugins.PerformanceInterceptor;
 
+@MapperScan(basePackages = {"com.spring.base.dao.user","com.spring.base.sys.security.mapper"})
 @Configuration
 //扫描dao或者是Mapper接口
 public class MybatisPlusConfig {

@@ -45,7 +45,7 @@ public class MybatisPlusGenerator {
                 .setEnableCache(false)
                 .setAuthor("hinzzz")
                 //指定输出文件夹位置
-                .setOutputDir("D:\\hinzzz\\spring-learn\\src\\main\\java")
+                .setOutputDir("D:\\space\\my\\src\\main\\java")
                 .setFileOverride(true)
                 .setServiceName("%sService");
         new AutoGenerator().setGlobalConfig(config)
@@ -54,10 +54,11 @@ public class MybatisPlusGenerator {
                 .setPackageInfo(
                         new PackageConfig()
                                 .setParent("com.spring.base")
-                                .setController("controller")
-                                .setEntity("model")
-                                .setMapper("dao")
-                                .setXml("dao.xml")
+                                .setController("controller.user")
+                                .setEntity("model.user")
+                                .setMapper("dao.user.mapper")
+                                .setXml("dao.user.xml")
+
                 ).execute();
     }
 

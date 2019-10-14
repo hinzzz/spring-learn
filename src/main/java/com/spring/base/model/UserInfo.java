@@ -1,5 +1,9 @@
 package com.spring.base.model;
 
+/**
+ * @author ：quanhz
+ * @date ：Created in 2019/10/14 11:47
+ */
 public class UserInfo {
     private String username;
     private String password;
@@ -18,13 +22,5 @@ public class UserInfo {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "UserInfo{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
     }
 }
